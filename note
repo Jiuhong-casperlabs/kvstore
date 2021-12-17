@@ -1,6 +1,26 @@
 casper-client put-deploy \
 --chain-name casper-test \
 --node-address http://3.208.91.63:7777 \
---payment-amount 30000000000 \
---session-path /home/jiuhong/mywork/kvstorage/contract/target/wasm32-unknown-unknown/release/contract.wasm \
---secret-key /home/jiuhong/keys/test99/secret_key.pem 
+--payment-amount 100000000000 \
+--session-path /home/jh/mywork/kvstore/contract/target/wasm32-unknown-unknown/release/contract.wasm \
+--secret-key /home/jh/keys/test99/secret_key.pem 
+================================================
+*** store optional value from command line *** 
+================================================
+casper-client put-deploy --node-address http://16.162.124.124:7777 \
+--chain-name casper-test \
+--secret-key /home/jh/keys/test98/secret_key.pem \
+--payment-amount 1000000000 \
+--session-hash  hash-957D3eCD4D9026cc8e6Dd727042c7B230F06e6748b4A1D74Cd4A5A074d5Bd1B1  \
+--session-entry-point store_optionkey \
+--session-arg "name:String='store_optionkey'" \
+--session-arg "value:opt_key='hash-957D3eCD4D9026cc8e6Dd727042c7B230F06e6748b4A1D74Cd4A5A074d5Bd1B1'"
+==============
+casper-client put-deploy --node-address http://16.162.124.124:7777 \
+--chain-name casper-test \
+--secret-key /home/jh/keys/test98/secret_key.pem \
+--payment-amount 1000000000 \
+--session-hash  hash-d8afDa72C273c06427c03b6FEC5fB87BD3033FaAA72270902775CFf9Aa843350  \
+--session-entry-point store_option \
+--session-arg "name:String='optionstring'" \
+--session-arg "value:opt_string='a value'"
